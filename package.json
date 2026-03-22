@@ -1,0 +1,10 @@
+{
+  "name": "ai-agent-web",
+  "private": true,
+  "packageManager": "pnpm@10.6.3",
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "lint:web": "pnpm --filter web lint",
+    "typecheck:web": "pnpm --filter web typecheck"
+  }
+}
