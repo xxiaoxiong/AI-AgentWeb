@@ -1,0 +1,39 @@
+[project]
+name = "ai-agent-web"
+version = "0.1.0"
+description = "Chinese-first web research agent platform monorepo"
+readme = "网页智能体平台_V1_需求与设计.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.116.0,<0.117.0",
+  "uvicorn[standard]>=0.35.0,<0.36.0",
+  "pydantic-settings>=2.10.0,<3.0.0",
+  "sqlalchemy>=2.0.39,<3.0.0",
+  "alembic>=1.16.0,<2.0.0",
+  "structlog>=25.4.0,<26.0.0",
+  "httpx>=0.28.1,<0.29.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.0,<9.0.0",
+  "pytest-asyncio>=1.1.0,<2.0.0",
+  "ruff>=0.11.0,<0.12.0",
+  "mypy>=1.15.0,<2.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = []
+
+[tool.pytest.ini_options]
+pythonpath = ["apps/api"]
+testpaths = ["tests"]
